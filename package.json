@@ -1,0 +1,21 @@
+{
+  "name": "typescrtipt-script-starter",
+  "version": "1.0.0",
+  "description": "Simple but effective way of starting a typescript script",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev src/index.ts",
+    "build": "tsc"
+  },
+  "author": "Alex Torres <hey@alextorres.me>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "14.0.5",
+    "@typescript-eslint/eslint-plugin": "3.0.1",
+    "@typescript-eslint/parser": "3.0.1",
+    "eslint": "7.1.0",
+    "ts-node-dev": "1.0.0-pre.44",
+    "typescript": "3.9.3"
+  },
+  "dependencies": {}
+}
