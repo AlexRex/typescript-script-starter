@@ -2,4 +2,6 @@ export const hack = (input: string) => {
   return `Hello ${input}`;
 }
 
-console.log(hack('hey'))
+if (require.main === module) {
+  console.log(hack(`${process.env.name}`))
+}
