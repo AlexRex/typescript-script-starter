@@ -1,5 +1,15 @@
 import { hack } from '../../src/index'
+jest.mock('../../src/logger')
+import { logger } from '../../src/logger'
 
-it('should pass', () => {
-  expect(hack('hey')).toBe('Hello hey')
+describe('src', () => {
+  beforeEach(() => {
+    jest.restoreAllMocks()
+  })
+
+  it('should pass', () => {
+    hack('hey')
+
+    expect(logger.info).toHaveBeenCalledWith('Hack hey')
+  })
 })

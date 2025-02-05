@@ -1,7 +1,5 @@
-export const hack = (input: string) => {
-  return `Hello ${input}`;
-}
+import { logger } from "./logger"
 
-if (require.main === module) {
-  console.log(hack(`${process.env.name}`))
+export const hack = (input: string) => {
+  logger.info(`Hack ${input}`);
 }
