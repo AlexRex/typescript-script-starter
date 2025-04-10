@@ -1,3 +1,3 @@
 export const logger = {
-  info: (...args: unknown[]) => console.log(...args)
+  info: (...args: unknown[]): void => console.log(...args),
 };

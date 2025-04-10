@@ -4,12 +4,13 @@
   "description": "Simple but effective way of starting a typescript script",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc-watch -b --onSuccess 'node dist/index.js'",
+    "start": "tsc-alias && node dist/index.js",
+    "dev": "tsc-watch -b --onSuccess 'npm run start'",
     "dev:env": "cross-env $(cat .env) npm run dev",
     "debug": "tsc-watch -b --onSuccess 'node --inspect dist/index.js'",
-    "clean": "rimraf dist docs tsconfig.tsbuildinfo test/results",
+    "clean": "rimraf dist test/results",
     "build": "tsc",
-    "lint": "eslint src",
+    "lint": "eslint . --fix",
     "test": "vitest run",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "vitest watch"
@@ -17,13 +18,21 @@
   "author": "Alex Torres <hey@alextorres.me>",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "20.16.0",
-    "@typescript-eslint/eslint-plugin": "^4.29.0",
-    "@typescript-eslint/parser": "^4.29.0",
+    "@eslint/js": "^9.24.0",
+    "@types/node": "22.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "@vitest/coverage-v8": "^3.1.1",
+    "aws-sdk-client-mock": "^4.1.0",
     "cross-env": "^7.0.3",
-    "eslint": "^7.32.0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "tsc-alias": "^1.8.15",
     "tsc-watch": "^6.2.1",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.5"
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
   }
 }

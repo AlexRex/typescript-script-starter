@@ -10,7 +10,7 @@
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "rootDir": "./src",
+    "baseUrl": ".",
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -20,11 +20,16 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/src/*": [
+        "src/*"
+      ],
+      "@/tests/*": [
+        "tests/*"
+      ]
+    },
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
     "node_modules",
     "dist",
